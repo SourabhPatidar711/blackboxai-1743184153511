@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="AI-Powered Disaster Response System">
+  <title>Disaster Response System</title>
+  <!-- Preload critical resources -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" as="style">
+  <link rel="preload" href="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=visualization" as="script">
+  <!-- PWA manifest -->
+  <link rel="manifest" href="/manifest.json">
+  <!-- Favicon for multiple platforms -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- Critical CSS -->
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background-color: #f0f2f5;
+    }
+    #root {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .emergency-alert {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+  <noscript>
+    <div class="noscript-warning">
+      <h1>JavaScript is required for this application</h1>
+      <p>This disaster response system relies on JavaScript for critical functionality. Please enable JavaScript in your browser settings.</p>
+    </div>
+  </noscript>
+  <div id="root"></div>
+  <!-- Emergency fallback script -->
+  <script>
+    if (!window.Promise || !window.fetch || !window.Symbol) {
+      document.write('<script src="/polyfills.js"><\/script>');
+    }
+  </script>
+</body>
+</html>
